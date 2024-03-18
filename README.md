@@ -1,8 +1,24 @@
-# React + Vite
+# HouseBanAo Luxury Home Planner Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **HouseBanAo Luxury Home Planner Calculator** is a streamlined tool designed for prospective homeowners to plan and estimate the cost of their luxury home. With a user-friendly interface, select from various architectural plans, customize dimensions, floors, and instantly calculate the estimated cost.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Architectural Plan Selection:** Choose the perfect plan for your dream home.
+- **Customization:** Tailor the dimensions and number of floors to your needs.
+- **Instant Estimation:** Quickly calculate the cost based on your specifications.
+
+## Getting Started
+
+```bash
+# Clone this repository
+git clone git@github.com:goyalkunjann/areasqft-calculator.git
+
+# Go into the repository
+cd frontend
+
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
