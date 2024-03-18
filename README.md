@@ -8,6 +8,10 @@ The **HouseBanAo Luxury Home Planner Calculator** is a streamlined tool designed
 - **Customization:** Tailor the dimensions and number of floors to your needs.
 - **Instant Estimation:** Quickly calculate the cost based on your specifications.
 
+## Screenshot
+
+![HouseBanAo Luxury Home Planner Calculator Screenshot](./src/assets/Screenshot.png)
+
 ## Getting Started
 
 ```bash
