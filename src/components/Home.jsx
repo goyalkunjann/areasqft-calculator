@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import '../index.css';
 import homeImage from '../assets/Houseimage.jpeg';
 
 const Home = () => {
   const [floors, setFloors] = useState(1);
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null); // This will now store the entire plan object
   const [length, setLength] = useState('');
   const [breadth, setBreadth] = useState('');
   const [totalCost, setTotalCost] = useState('');
@@ -21,14 +22,13 @@ const Home = () => {
       return;
     }
     const area = length * breadth;
-    const cost = area * selectedPlan.price * floors; 
+    const cost = area * selectedPlan.price * floors; // Ensure this calculation is correct
     setTotalCost(cost);
   };
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-white to-light-800">
       <div className="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-4xl flex">
-     
         <div className="w-1/2 flex justify-center items-center bg-cover" style={{ backgroundImage: `url(${homeImage})` }}>
         </div>
         <div className="w-1/2 p-8">
@@ -42,8 +42,8 @@ const Home = () => {
               {plans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`cursor-pointer p-4 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out ${selectedPlan === plan.price ? 'ring-4 ring-gray-700' : 'bg-gray-200'}`}
-                  onClick={() => setSelectedPlan(plan.price)}
+                  className={`cursor-pointer p-4 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out ${selectedPlan && selectedPlan.name === plan.name ? 'ring-4 ring-gray-700' : 'bg-gray-200'}`}
+                  onClick={() => setSelectedPlan(plan)} // Store the entire plan object
                 >
                   <h4 className="text-md font-semibold">{plan.name}</h4>
                   <p className="text-gray-700">₹{plan.price}</p>
