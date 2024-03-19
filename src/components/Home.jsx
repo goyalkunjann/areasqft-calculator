@@ -4,7 +4,7 @@ import homeImage from '../assets/Houseimage.jpeg';
 
 const Home = () => {
   const [floors, setFloors] = useState(1);
-  const [selectedPlan, setSelectedPlan] = useState(null); // This will now store the entire plan object
+  const [selectedPlan, setSelectedPlan] = useState(null); 
   const [length, setLength] = useState('');
   const [breadth, setBreadth] = useState('');
   const [totalCost, setTotalCost] = useState('');
@@ -22,36 +22,36 @@ const Home = () => {
       return;
     }
     const area = length * breadth;
-    const cost = area * selectedPlan.price * floors; // Ensure this calculation is correct
+    const cost = area * selectedPlan.price * floors; 
     setTotalCost(cost);
   };
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-white to-light-800">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-4xl flex">
-        <div className="w-1/2 flex justify-center items-center bg-cover" style={{ backgroundImage: `url(${homeImage})` }}>
+      <div className="bg-white shadow-md rounded-lg overflow-hidden w-full max-w-4xl flex flex-col lg:flex-row">
+        <div className="w-full lg:w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${homeImage})`, height: '400px' }}>
         </div>
-        <div className="w-1/2 p-8">
+        <div className="w-full lg:w-1/2 p-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl text-gray-800">Luxury Home Planner</h2>
-            <p className="text-lg text-gray-600">Create Your Dream Home</p>
+            <h2 className="text-3xl lg:text-4xl text-gray-800">Luxury Home Planner</h2>
+            <p className="text-lg lg:text-xl text-gray-600">Create Your Dream Home</p>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Choose Your Plan:</h3>
+          <div className="mb-8">
+            <h3 className="text-lg lg:text-xl font-semibold text-gray-800 mb-4">Choose Your Plan:</h3>
             <div className="grid grid-cols-2 gap-4">
               {plans.map((plan) => (
                 <div
                   key={plan.name}
                   className={`cursor-pointer p-4 flex flex-col items-center justify-center rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out ${selectedPlan && selectedPlan.name === plan.name ? 'ring-4 ring-gray-700' : 'bg-gray-200'}`}
-                  onClick={() => setSelectedPlan(plan)} // Store the entire plan object
+                  onClick={() => setSelectedPlan(plan)}
                 >
-                  <h4 className="text-md font-semibold">{plan.name}</h4>
+                  <h4 className="text-md lg:text-lg font-semibold">{plan.name}</h4>
                   <p className="text-gray-700">₹{plan.price}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="space-y-4 mt-8">
+          <div className="space-y-4">
             <input
               type="number"
               value={length}
@@ -79,8 +79,7 @@ const Home = () => {
               />
             </div>
           </div>
-
-          <div className="flex justify-between items-center space-y-4 mt-8">
+          <div className="flex justify-between items-center mt-8">
             <button
               className="px-6 py-3 bg-gray-800 text-white rounded hover:bg-black focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-700 focus:ring-opacity-50"
               onClick={calculateTotalCost}
